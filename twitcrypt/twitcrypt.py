@@ -4,6 +4,7 @@
 	'''
 
 from Crypto.Cipher import Blowfish
+from getpass import getpass
 from os.path import isfile, isdir
 from os import mkdir
 
@@ -14,16 +15,16 @@ def getpassuser(line):
 	'''
 		Get user input for password
 		''' 
-	return raw_input(line)
+	return getpass(line)
 
 def getapiuser():
 	'''
 		Get API keys from user
 		'''
-	ckey 	= raw_input('Enter consumer key >')
-	csecret = raw_input('Enter consumer secret >')
-	atkey 	= raw_input('Enter access token key >')
-	atsecret= raw_input('Enter access token secret >')
+	ckey 	= getpass('Enter consumer key >')
+	csecret = getpass('Enter consumer secret >')
+	atkey 	= getpass('Enter access token key >')
+	atsecret= getpass('Enter access token secret >')
 	return ckey, csecret, atkey, atsecret
 	
 def padcrypt(crypt, key):
